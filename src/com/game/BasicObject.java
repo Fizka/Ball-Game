@@ -1,8 +1,9 @@
 package com.game;
 
+import javax.swing.*;
 import java.awt.*;
 
-public abstract class BasicObject implements Runnable {
+public abstract class BasicObject extends JPanel implements Runnable {
 
     protected int xPoint, yPoint;
     protected OPTIONS OPTIONS;

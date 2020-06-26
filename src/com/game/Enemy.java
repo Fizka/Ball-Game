@@ -1,8 +1,11 @@
 package com.game;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Enemy extends BasicObject {
+
+    private ImageIcon enemy;
 
     public Enemy(int x, int y, OPTIONS OPTIONS){
         super(x,y, OPTIONS);
@@ -13,13 +16,15 @@ public class Enemy extends BasicObject {
     @Override
     public void GraphicsChange(Graphics g)
     {
-        g.setColor(Color.red);
-        g.fillOval(xPoint, yPoint,16,16);
+       // g.setColor(Color.red);
+        //g.fillOval(xPoint, yPoint,16,16);
+        enemy = new ImageIcon("enemy.png");
+        enemy.paintIcon(this, g, xPoint, yPoint );
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(xPoint, yPoint,16,16);
+        return new Rectangle(xPoint, yPoint,20,20);
     }
 
     @Override

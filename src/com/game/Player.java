@@ -1,5 +1,6 @@
 package com.game;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
@@ -7,6 +8,7 @@ public class Player extends BasicObject {
 
     Random r = new Random();
     ObjectContainer objectContainer;
+    private ImageIcon player;
 
     public  Player(int x, int y, OPTIONS OPTIONS, ObjectContainer objectContainer)
     {
@@ -30,9 +32,10 @@ public class Player extends BasicObject {
     @Override
     public void GraphicsChange(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
-
-        g.setColor(Color.BLACK);
-        g.fillOval(xPoint, yPoint,32,23);
+        player = new ImageIcon("gamer1.png");
+        player.paintIcon(this, g, xPoint, yPoint );
+        //g.setColor(Color.BLACK);
+        //g.fillOval(xPoint, yPoint,32,23);
     }
 
     @Override

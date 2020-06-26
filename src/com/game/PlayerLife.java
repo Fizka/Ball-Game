@@ -12,11 +12,11 @@ public class PlayerLife implements Runnable{
 
     public void GraphicsChange(Graphics g){
         g.setColor(Color.gray);
-        g.fillRect(15,25, 200, 16);
+        g.fillRect(500,25, 200, 16);
         g.setColor(new Color(75, greenValue, 0));
-        g.fillRect(15,25, HEALH*2, 16);
-        g.setColor(Color.white);
-        g.drawRect(15,25, 200, 16);
+        g.fillRect(500,25, HEALH*2, 16);
+        g.setColor(Color.black);
+        g.drawRect(500,25, 200, 16);
         g.drawString("Score " + score, 15, 60);
     }
 

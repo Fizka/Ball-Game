@@ -1,5 +1,6 @@
 package com.game;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.util.Random;
@@ -9,8 +10,8 @@ public class Main extends Canvas implements Runnable {
 
     private static final long serialVersionUID = -8478170199981923620L;
 
-    public static final int WIDTH = 1000, HEIGHT = WIDTH/12 * 9;
-
+    public static final int WIDTH = 800, HEIGHT = 500;
+    private ImageIcon background;
     private Thread thread;
     private boolean running = false;
     ExecutorService executor = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS,
@@ -126,8 +127,10 @@ public class Main extends Canvas implements Runnable {
         }
 
         Graphics graphics = bufferStrategy.getDrawGraphics();
-        graphics.setColor(Color.YELLOW);
-        graphics.fillRect(0,0,WIDTH, HEIGHT);
+        background = new ImageIcon("2.jpg");
+        background.paintIcon(this, graphics, 0, 0 );
+      // graphics.setColor(Color.YELLOW);
+     //  graphics.fillRoundRect(0,0,WIDTH, HEIGHT,10,10);
         objectContainer.GraphicsChange(graphics);
 
         if(gameState == STATE.Game)
